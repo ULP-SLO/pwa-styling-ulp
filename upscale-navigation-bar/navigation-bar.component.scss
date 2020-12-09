@@ -1,0 +1,55 @@
+@import '~styles/helpers/_module';
+
+$space-between: 10px;
+
+:host {
+	nav {
+		display: flex;
+		min-height: 54px;
+		ul {
+			list-style-type: none;
+			margin: 0;
+			padding: 0;
+			display: flex;
+			flex-wrap: wrap;
+			align-items: center;
+			overflow: auto;
+			li {
+				box-sizing: border-box;
+				display: flex;
+				align-items: center;
+				border: 0;
+				outline: 0;
+				height: 54px;
+				a {
+					@include button($background-color: #ffffff, $border-radius: 2px);
+					@include small-font-size;
+					height: 42px;
+					line-height: 42px;
+					padding: 0 $space-between;
+					text-decoration: unset;
+					text-align: left;
+					color: #000000;
+					overflow: hidden;
+					text-overflow: ellipsis;
+					white-space: nowrap;
+					display: flex;
+
+					.item-icon {
+						padding: 0 6px;
+						width: auto;
+						height: 20px;
+						align-self: center;
+					}
+				}
+
+			}
+		}
+	}
+}
+
+upscale-shopping-cart-icon {
+	margin: 0 6px 0 3px;
+	font-weight: 100;
+	@include small-font-size;
+}

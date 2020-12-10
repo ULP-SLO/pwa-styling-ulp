@@ -140,7 +140,7 @@
 
 :host {
 	@extend .column; // Only holds true when in grid view.
-	background-color: white;
+	background-color: #efefef;
 	padding: 0;
 
 	.colors {

@@ -1,0 +1,78 @@
+@import "~styles/helpers/_module";
+
+:host {
+	display: block;
+
+	::ng-deep upscale-aspect-ratio {
+		h1, h2, h3, h4 {
+			font-weight: bold;
+		}
+		h1 {
+			font-size: 2em;
+			margin-top: 0.67em;
+			margin-bottom: 0.67em;
+		}
+		h2 {
+			font-size: 1.5em;
+			margin-top: 0.83em;
+			margin-bottom: 0.83em;
+		}
+		h3 {
+			font-size: 1.17em;
+			margin-top: 1em;
+			margin-bottom: 1em;
+		}
+		h4 {
+			font-size: 1em;
+			margin-top: 1.33em;
+			margin-bottom: 1.33em;
+		}
+	}
+}
+
+.upscale-mobile :host {
+	.configuration {
+		padding: 12px;
+	}
+}
+
+.upscale-tablet :host {
+	.configuration {
+		padding: 24px;
+	}
+}
+
+.upscale-desktop :host  {
+	.configuration {
+		padding: 48px;
+	}
+}
+
+.configuration {
+	box-sizing: border-box;
+	margin: 0 auto;
+}
+
+.container {
+	display: block;
+	margin: auto;
+}
+
+.headline {
+	@include extra-large-font-size;
+}
+
+.sub-headline {
+	font-size: 26px;
+	line-height: 1.38;
+}
+
+
+.text {
+	margin: auto 0;
+}
+
+//Custom style
+.content-slot-component-background{
+	background: white;
+}

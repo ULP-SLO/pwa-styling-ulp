@@ -33,8 +33,7 @@
 			user-select: none;
 			font-weight: 100;
 			background-color: $upscale-grey9;
-			border: solid 1px  darken(white, 20%);
-
+			border: solid 1px darken(white, 20%);
 			&:hover {
 				background-color: darken(white, 10%);
 			}

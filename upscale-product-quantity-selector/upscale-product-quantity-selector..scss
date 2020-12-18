@@ -1,0 +1,53 @@
+@import '~styles/helpers/_module';
+
+:host {
+	display: flex;
+	flex-direction: column;
+	label {
+		padding-bottom: 10px;
+		@include base-font-size;
+	}
+	.inputs {
+		display: flex;
+		.number {
+			border: solid 1px darken(white, 20%);
+			@include base-font-size;
+			text-align: center;
+			height: 35px;
+			width: 80px;
+			margin: 0 10px 0 10px;
+			outline: 0;
+			-moz-appearance: textfield;
+
+			&::-webkit-inner-spin-button,
+			&::-webkit-outer-spin-button {
+				-webkit-appearance: none;
+				margin: 0;
+			}
+		}
+		.action-button {
+			@include clickable;
+			width: 40px;
+			line-height: 40px;
+			text-align: center;
+			user-select: none;
+			font-weight: 100;
+			background-color: $upscale-grey9;
+			border: solid 1px darken(white, 20%);
+			&:hover {
+				background-color: darken(white, 10%);
+			}
+			.subtract {
+				font-size: 25px;
+			}
+			.add {
+				font-size: 25px;
+			}
+
+			&--disabled {
+				pointer-events: none;
+				border: none;
+			}
+		}
+	}
+}

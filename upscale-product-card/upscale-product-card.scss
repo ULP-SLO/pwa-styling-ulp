@@ -1,0 +1,589 @@
+@import '~styles/helpers/_module';
+
+.card {
+	width: 100%;
+	height: 100%;
+	background: white;
+	border: solid 1px $upscale-grey7;
+	box-sizing: border-box;
+	display: flex;
+	flex-flow: column;
+
+	.product {
+		display: flex;
+		flex-direction: row;
+
+		.image {
+			width: 153px;
+			height: 153px;
+			background-repeat: no-repeat;
+		}
+		.product-data {
+			display: flex;
+			justify-content: space-between;
+			flex: 1;
+			padding: 12px 13px 12px 9px;
+
+			.info {
+				display: flex;
+				flex-direction: column;
+
+				.name {
+					font-weight: 500;
+				}
+				.recurrence,
+				.variant-attribute {
+					@include small-font-size;
+					text-transform: capitalize;
+					font-weight: 400;
+				}
+			}
+			.unit-price {
+				@include small-font-size;
+				text-transform: capitalize;
+				font-weight: 400;
+			}
+			.quantity {
+				@include small-font-size;
+				text-transform: capitalize;
+				font-weight: 400;
+				display: flex;
+				flex-direction: row;
+				align-items: center;
+				.label {
+					margin-right: 2px;
+				}
+				.quantity-value {
+					margin-left: 20px;
+					margin-right: 20px;
+				}
+				.selector {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					cursor: default;
+					.number {
+						border: solid 1px $upscale-grey11;
+						@include base-font-size;
+						text-align: center;
+						height: 35px;
+						width: 45px;
+						margin: 0 2px 0 2px;
+						outline: 0;
+						-moz-appearance: textfield;
+
+						&::-webkit-inner-spin-button,
+						&::-webkit-outer-spin-button {
+							-webkit-appearance: none;
+							margin: 0;
+						}
+					}
+					.action-button {
+						@include clickable;
+						width: 40px;
+						line-height: 40px;
+						text-align: center;
+						user-select: none;
+						font-weight: 100;
+						background-color: $upscale-grey9;
+						&:hover {
+							background-color: darken(white, 10%);
+						}
+						.subtract {
+							font-size: 25px;
+						}
+						.add {
+							font-size: 25px;
+						}
+
+						&--disabled {
+							color: $upscale-grey6;
+							pointer-events: none;
+						}
+					}
+				}
+			}
+		}
+		.prices {
+			font-weight: 500;
+			padding-left: 8px;
+			.price {
+				text-align: right;
+			}
+			.lineSellingSubTotal {
+				text-align: right;
+			}
+			.lineSubTotal {
+				text-align: right;
+				color: $upscale-grey4;
+				text-decoration: line-through;
+			}
+			.lineDiscount {
+				text-align: right;
+				color: $upscale-grey4;
+				white-space: nowrap;
+			}
+			.original-price {
+				text-align: right;
+				color: $upscale-grey4;
+				text-decoration: line-through;
+			}
+		}
+	}
+	.button-holder {
+		display: flex;
+		flex-grow: 1;
+		align-items: flex-end;
+		padding: 0 24px 24px;
+	}
+
+	.buttons {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
+		@include small-font-size;
+		color: #000000;
+		width: 100%;
+		box-sizing: border-box;
+		line-height: 40px;
+		padding: 15px;
+
+		.button-label {
+			padding: 0 15px;
+			overflow: hidden;
+			text-overflow: ellipsis;
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		.remove-button {
+			@include clickable;
+			text-align: center;
+			border: 1px solid #f2f2f2;
+			margin-right: 10px;
+			white-space: nowrap;
+			overflow: hidden;
+			&:hover {
+				background-color: #f2f2f2;
+			}
+		}
+
+		.edit-button {
+			@include clickable;
+			justify-content: right;
+			text-align: center;
+			border: 1px solid #f2f2f2;
+			white-space: nowrap;
+			overflow: hidden;
+			&:hover {
+				background-color: #f2f2f2;
+			}
+		}
+	}
+
+	upscale-attribute-set {
+		::ng-deep .body {
+			max-width: none;
+		}
+	}
+
+	::ng-deep upscale-loading {
+		::ng-deep .loading {
+			margin-top: 12px;
+		}
+	}
+}
+
+:host {
+	&.gridCard {
+		margin-bottom: 10px;
+		margin-right: 10px;
+		width: 295px;
+		.product {
+			display: flex;
+			flex-direction: column;
+			padding: 0;
+			.image {
+				padding-top: 100%;
+				height: 100%;
+				width: 100%;
+				position: relative;
+
+				upscale-product-image {
+					position: absolute;
+					top: 0;
+					left: 0;
+					width: 100%;
+					height: 100%;
+				}
+			}
+			.product-data {
+				padding: 15px;
+				.info {
+					width: 100%;
+					padding-left: 0px;
+					margin-right: 10px;
+					.name {
+						@include base-font-size;
+					}
+					.recurrence,
+					.unit-price,
+					.variant-attribute {
+						@include small-font-size;
+						font-weight: 400;
+					}
+					.quantity {
+						margin-bottom: 10px;
+					}
+				}
+				.prices {
+					@include base-font-size;
+					padding-left: 0;
+					.price {
+						text-align: right;
+						font-weight: 500;
+						line-height: 1.56;
+					}
+				}
+			}
+
+			.quantity {
+				@include small-font-size;
+				font-weight: 500;
+				color: $upscale-grey4;
+				display: flex;
+				flex-direction: row;
+
+				.label {
+					margin-right: 2px;
+					color: #000000;
+				}
+				.quantity-value {
+					margin-left: 20px;
+					margin-right: 20px;
+				}
+				.selector {
+					display: flex;
+					flex-direction: row;
+					align-items: center;
+					cursor: default;
+					.number {
+						border: solid 1px $upscale-grey11;
+						@include base-font-size;
+						text-align: center;
+						height: 35px;
+						width: 45px;
+						margin: 0 2px 0 2px;
+						outline: 0;
+						-moz-appearance: textfield;
+
+						&::-webkit-inner-spin-button,
+						&::-webkit-outer-spin-button {
+							-webkit-appearance: none;
+							margin: 0;
+						}
+					}
+					.action-button {
+						@include clickable;
+						width: 40px;
+						line-height: 40px;
+						text-align: center;
+						user-select: none;
+						font-weight: 100;
+						background-color: $upscale-grey9;
+						&:hover {
+							background-color: darken(white, 10%);
+						}
+						.subtract {
+							font-size: 25px;
+						}
+						.add {
+							font-size: 25px;
+						}
+
+						&--disabled {
+							color: $upscale-grey6;
+							pointer-events: none;
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+.upscale-extra-large,
+.upscale-large {
+	:host.cart-list {
+		&.gridCard {
+			width: 50%;
+			padding: 0px 6px 12px 6px;
+			box-sizing: border-box;
+			margin: 0;
+			.product {
+				.image {
+					width: 100%;
+				}
+				.product-data {
+					.info {
+						.name {
+							@include medium-font-size;
+						}
+						.recurrence,
+						.unit-price,
+						.variant-attribute {
+							@include small-font-size;
+							font-weight: 400;
+						}
+					}
+					.prices {
+						@include medium-font-size;
+					}
+				}
+				.quantity {
+					@include small-font-size;
+					font-weight: 400;
+				}
+			}
+		}
+		.list-view {
+			.product {
+				padding: 0;
+				.image {
+					width: 153px;
+					height: 153px;
+				}
+				.product-data {
+					.info {
+						.name {
+							@include medium-font-size;
+							color: #000000;
+						}
+						.recurrence,
+						.quantity,
+						.unit-price,
+						.variant-attribute {
+							@include small-font-size;
+							text-transform: capitalize;
+							font-weight: 400;
+						}
+					}
+					.prices {
+						@include medium-font-size;
+						.lineDiscount {
+							@include base-font-size;
+						}
+					}
+				}
+			}
+			.button-holder {
+				.buttons {
+					@include base-font-size;
+					padding: 24px 0px 0px 0px;
+					.button-label {
+						padding: 0 20px;
+					}
+					line-height: 40px;
+				}
+			}
+		}
+	}
+}
+
+.upscale-large {
+	:host.cart-list {
+		&.gridCard {
+			width: 33%;
+			padding: 0px 6px 12px 6px;
+			box-sizing: border-box;
+			border: none;
+			margin: 0;
+			.product {
+				.image {
+					width: 100%;
+				}
+				.product-data {
+					.info {
+						.name {
+							@include base-font-size;
+						}
+						.recurrence,
+						.unit-price,
+						.variant-attribute {
+							@include small-font-size;
+							text-transform: capitalize;
+							font-weight: 400;
+						}
+					}
+					.prices {
+						@include small-font-size;
+					}
+				}
+				.quantity {
+					@include small-font-size;
+					text-transform: capitalize;
+					font-weight: 400;
+				}
+			}
+		}
+	}
+}
+
+.upscale-medium {
+	:host.cart-list {
+		&.gridCard {
+			width: 50%;
+			padding: 0px 6px 12px 6px;
+			box-sizing: border-box;
+			margin: 0;
+			&:nth-child(even) {
+				padding-right: 0px;
+			}
+			.product {
+				.image {
+					width: 100%;
+				}
+				.product-data {
+					.info {
+						.name {
+							@include medium-font-size;
+						}
+						.recurrence,
+						.unit-price,
+						.variant-attribute {
+							@include small-font-size;
+							text-transform: capitalize;
+							font-weight: 400;
+						}
+					}
+					.prices {
+						@include medium-font-size;
+					}
+				}
+				.quantity {
+					@include small-font-size;
+					text-transform: capitalize;
+					font-weight: 400;
+				}
+			}
+		}
+		.list-view {
+			.product {
+				padding: 0;
+				.image {
+					width: 100px;
+					height: 100px;
+				}
+				.product-data {
+					.info {
+						padding-left: $small-spacer-tablet;
+						.name {
+							@include medium-font-size;
+							color: #000000;
+						}
+						.recurrence,
+						.quantity,
+						.unit-price,
+						.variant-attribute {
+							@include small-font-size;
+							text-transform: capitalize;
+							font-weight: 400;
+						}
+					}
+					.prices {
+						@include medium-font-size;
+						.lineDiscount {
+							@include base-font-size;
+						}
+					}
+				}
+			}
+			.button-holder {
+				.buttons {
+					padding: 24px 0px 0px 0px;
+					.button-label {
+						padding: 0 20px;
+					}
+				}
+			}
+		}
+	}
+}
+
+.upscale-small,
+.upscale-extra-small {
+	:host.cart-list {
+		&.gridCard {
+			&:nth-child(even) {
+				padding-right: 0px;
+			}
+			width: 50%;
+			padding: $small-spacer-mobile 0 $small-spacer-mobile $small-spacer-mobile;
+		}
+		.list-view {
+			.product {
+				padding: 0;
+				.image {
+					width: 88px;
+					height: 88px;
+				}
+				.product-data {
+					.info {
+						padding-left: $small-spacer-mobile;
+						.name {
+							@include base-font-size;
+							font-weight: 500;
+							color: #000000;
+						}
+						.recurrence,
+						.quantity,
+						.unit-price,
+						.variant-attribute {
+							@include small-font-size;
+							text-transform: capitalize;
+							font-weight: 400;
+						}
+					}
+					.prices {
+						@include base-font-size;
+						.lineDiscount {
+							@include small-font-size;
+						}
+					}
+				}
+			}
+			.button-holder {
+				.buttons {
+					padding: 24px 0px 0px 0px;
+				}
+			}
+		}
+	}
+}
+
+.upscale-medium,
+.upscale-small,
+.upscale-extra-small {
+	:host.cart-list {
+		&.gridCard {
+			width: 50%;
+			padding: 6px;
+			box-sizing: border-box;
+			margin: 0;
+
+			.product {
+				.image {
+					width: 100%;
+				}
+			}
+		}
+	}
+}
+
+.order-status {
+	display: inline-block;
+	text-transform: lowercase;
+	&::first-letter {
+		text-transform: uppercase;
+	}
+}

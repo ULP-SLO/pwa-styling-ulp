@@ -32,10 +32,15 @@
 	}
 }
 
+
 .upscale-mobile :host {
     .configuration {
         padding: 12px;
 	}
+	.mobileMargin {
+		margin-bottom: 1rem;
+	}
+
 	.mobileMargin {
 		margin-bottom: 1rem;
 	}

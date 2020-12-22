@@ -55,9 +55,9 @@ $row-height: 54px;
 				align-items: center;
 			}
 			&.desktop {
-				max-height: 40px;
+				max-height: 65px;
 			}
-			max-height: 26px;
+			max-height: 50px;
 			@include clickable;
 		}
 	}

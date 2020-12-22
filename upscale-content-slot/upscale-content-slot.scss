@@ -32,27 +32,25 @@
 	}
 }
 
-
 .upscale-mobile :host {
-	.configuration {
-		padding: 0px;
+    .configuration {
+        padding: 12px;
 	}
-
 	.mobileMargin {
 		margin-bottom: 1rem;
 	}
 }
-
+ 
 .upscale-tablet :host {
-	.configuration {
-		padding: 0px;
-	}
+    .configuration {
+        padding: 24px;
+    }
 }
 
 .upscale-desktop :host  {
-	.configuration {
-		padding: 0px;
-	}
+    .configuration {
+        padding: 48px;
+    }
 }
 
 .configuration {

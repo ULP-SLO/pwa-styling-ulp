@@ -57,7 +57,7 @@ $row-height: 54px;
 			&.desktop {
 				max-height: 65px;
 			}
-			max-height: 50px;
+			max-height: 40px;
 			@include clickable;
 		}
 	}

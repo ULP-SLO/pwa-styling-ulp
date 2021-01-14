@@ -1,8 +1,9 @@
 :host {
     width: 100vw;
     max-width: unset;
-    position: relative;
-    top: 310px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 .content {
